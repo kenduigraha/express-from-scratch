@@ -27,7 +27,12 @@ const books = require('./data.js')
 
 console.log(books);
 
-router.get('/pin', (req, res, next) => {
+
+// ---------------------------------------------------------------------
+// ROUTING
+// ---------------------------------------------------------------------
+
+router.get('/ping', (req, res, next) => {
   res.send('PONG!')
 })
 
@@ -36,7 +41,20 @@ router.get('books', (req, res, next) => {
 })
 
 // ---------------------------------------------------------------------
-// ROUTING
+// REGISTER ROUTES
 // ---------------------------------------------------------------------
 
 app.use('/', router)
+
+
+// ---------------------------------------------------------------------
+// RUN THE APP
+// ---------------------------------------------------------------------
+
+const hostname = process.env.HOST || "localhost"
+const port = process.env.PORT || 3000
+
+app.listen(port, hostname, (err) => {
+  if(err) console.log(err)
+  console.log(`Server is running on ${hostname}:${port}`);
+})
