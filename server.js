@@ -11,7 +11,8 @@ const cors = require('cors')
 
 // Initiate Express
 const app = express()
-const router = express.Router()
+// const router = express.Router()
+const router = require('./routes/test')
 
 // ---------------------------------------------------------------------
 // APP CONFIGURATION
@@ -26,19 +27,6 @@ app.use(cors())
 const books = require('./data.js')
 
 console.log(books);
-
-
-// ---------------------------------------------------------------------
-// ROUTING
-// ---------------------------------------------------------------------
-
-router.get('/ping', (req, res, next) => {
-  res.send('PONG!')
-})
-
-router.get('/books', (req, res, next) => {
-  res.json(books)
-})
 
 // ---------------------------------------------------------------------
 // REGISTER ROUTES
