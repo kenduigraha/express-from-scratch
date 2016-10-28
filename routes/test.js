@@ -14,9 +14,9 @@ router.get('/ping', (req, res, next) => {
 })
 
 router.get('/books', (req, res, next) => {
-  //req.body.body
-  //req.params
-  //req.query
+  //req.body.body = /
+  //req.params = /params
+  //req.query = ?query={value}
   var new_book = {
     id: Number(req.body.id),
     name: req.body.name,
@@ -26,6 +26,12 @@ router.get('/books', (req, res, next) => {
   res.json(books)
 })
 
-
+router.get('/books/:id', (req, res, next) => {
+  let book = books.filter( book => {
+    return book.id == req.params.id
+  })[0]
+  console.log(book);
+  res.json(book)
+})
 
 module.exports = router
