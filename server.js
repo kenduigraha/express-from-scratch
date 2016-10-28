@@ -11,7 +11,7 @@ const cors = require('cors')
 
 // Initiate Express
 const app = express()
-const router = app.Router()
+const router = express.Router()
 
 // ---------------------------------------------------------------------
 // APP CONFIGURATION
