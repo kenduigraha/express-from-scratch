@@ -27,11 +27,12 @@ router.get('/books', (req, res, next) => {
 })
 
 router.get('/books/:id', (req, res, next) => {
-  let book = books.filter( book => {
+  let book = books.filter( (book) => {
     return book.id == req.params.id
   })[0]
   console.log(book);
   res.json(book)
 })
+
 
 module.exports = router
