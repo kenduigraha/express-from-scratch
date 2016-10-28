@@ -26,3 +26,17 @@ app.use(cors())
 const books = require('./data.js')
 
 console.log(books);
+
+router.get('/pin', (req, res, next) => {
+  res.send('PONG!')
+})
+
+router.get('books', (req, res, next) => {
+  res.json(books)
+})
+
+// ---------------------------------------------------------------------
+// ROUTING
+// ---------------------------------------------------------------------
+
+app.use('/', router)
