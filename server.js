@@ -16,3 +16,8 @@ const router = app.Router()
 // ---------------------------------------------------------------------
 // APP CONFIGURATION
 // ---------------------------------------------------------------------
+
+// req.body
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser,json())
+app.use(cors())
