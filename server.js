@@ -36,7 +36,7 @@ router.get('/ping', (req, res, next) => {
   res.send('PONG!')
 })
 
-router.get('books', (req, res, next) => {
+router.get('/books', (req, res, next) => {
   res.json(books)
 })
 
