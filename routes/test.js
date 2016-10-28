@@ -36,5 +36,21 @@ router.get('/books/:id', (req, res, next) => {
   res.json(book)
 })
 
+// DELETE
+router.delete('/books/:id', (req, res, next) => {
+  // Filter book by id
+  const book = books.filter((book) => {
+    return book.id === Number(req.params.id)
+  })[0]
+
+  // Send 404 error if book not found
+  if(!book) res.status(404).json({'message': "No Book Found"})
+
+  // Delete the book by id
+  books.splice(books.indexOf(book), 1)
+
+  // Send success message
+  res.json({ 'message' : `Book ${req.params.id} has been deleted`})
+})
 
 module.exports = router
