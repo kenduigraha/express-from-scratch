@@ -30,7 +30,9 @@ router.get('/books/:id', (req, res, next) => {
   let book = books.filter( (book) => {
     return book.id == req.params.id
   })[0]
-  console.log(book);
+
+  if(!book) res.status(404).json({message: "Data Not Found"})
+
   res.json(book)
 })
 
