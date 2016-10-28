@@ -23,11 +23,6 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(cors())
 
-
-const books = require('./data.js')
-
-console.log(books);
-
 // ---------------------------------------------------------------------
 // REGISTER ROUTES
 // ---------------------------------------------------------------------
