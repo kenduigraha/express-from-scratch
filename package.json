@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/kenduigraha/express-from-scratch#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
     "express": "^4.14.0"
   }
 }
