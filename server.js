@@ -19,8 +19,10 @@ const router = express.Router()
 
 // req.body
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser,json())
+app.use(bodyParser.json())
 app.use(cors())
 
 
-const data = require('./data.js')
+const books = require('./data.js')
+
+console.log(books);
