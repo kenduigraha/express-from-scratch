@@ -1,0 +1,23 @@
+{
+  "name": "express-scratch",
+  "version": "1.0.0",
+  "description": "Express from scratch",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenduigraha/express-from-scratch.git"
+  },
+  "keywords": [
+    "express",
+    "scratch"
+  ],
+  "author": "Ken Duigraha Putra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kenduigraha/express-from-scratch/issues"
+  },
+  "homepage": "https://github.com/kenduigraha/express-from-scratch#readme"
+}
