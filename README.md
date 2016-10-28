@@ -1,5 +1,7 @@
 # Express From Scratch Workshop
 
+Build node.js app using express scratch
+
 ## Setup
 
 ```sh
