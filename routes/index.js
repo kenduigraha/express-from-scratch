@@ -17,13 +17,13 @@ router.get('/books', (req, res, next) => {
   //req.body.body = /
   //req.params = /params
   //req.query = ?query={value}
-  var new_book = {
-    id: Number(req.body.id),
-    name: req.body.name,
-    price: Number(req.body.price)
-  }
-  books.push(new_book)
   res.json(books)
+  // var new_book = {
+  //   id: Number(req.body.id),
+  //   name: req.body.name,
+  //   price: Number(req.body.price)
+  // }
+  // books.push(new_book)
 })
 
 router.get('/books/:id', (req, res, next) => {
@@ -38,7 +38,7 @@ router.get('/books/:id', (req, res, next) => {
 
 // DELETE
 router.delete('/books/:id', (req, res, next) => {
-  // Filter book by id
+  // Get book by id
   const book = books.filter((book) => {
     return book.id === Number(req.params.id)
   })[0]
@@ -51,6 +51,31 @@ router.delete('/books/:id', (req, res, next) => {
 
   // Send success message
   res.json({ 'message' : `Book ${req.params.id} has been deleted`})
+})
+
+router.put('/books/:id', (req, res, next) => {
+  // Get book by id
+  const book = books.filter((book) => {
+    return book.id === Number(req.params.id)
+  })[0]
+
+  // Send 404 error if book not found
+  if(!book) res.status(404).json({'message': "No Book Found"})
+
+  const index = books.indexOf(book)
+  const key = Object.keys(req.body)
+
+  key.forEach(key => {
+    // book[key] = req.body[key]
+    book.id = Number(req.body.id),
+    book.name = req.body.name,
+    book.price = Number(req.body.price)
+  })
+
+  books[index] = book
+
+  // Send success message
+  res.json({ 'message' : `Book ${req.params.id} has been updated`})
 })
 
 module.exports = router
