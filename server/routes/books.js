@@ -7,7 +7,7 @@ const express = require('express')
 // Initiate Express
 const app = express()
 const router = express.Router()
-const books = require('../data.js')
+const books = require('../data/books')
 
 router.get('/ping', (req, res, next) => {
   res.send('PONG!')
