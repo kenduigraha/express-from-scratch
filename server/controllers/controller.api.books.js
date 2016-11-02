@@ -1,5 +1,12 @@
-//data books
+// LEGACY DATA WITH JSON
 const books = require('../data/books')
+
+// data from mongoose
+const Book = require('../models/books')
+
+// ------------------------------------------------
+// CONTROLLING
+// ------------------------------------------------
 
 /*
   GET
@@ -9,13 +16,28 @@ let getBooks = (req, res, next) => {
   //req.body.body = /
   //req.params = /params
   //req.query = ?query={value}
-  res.json(books)
+  Book.find({}, (err, all_books) => {
+    res.json(all_books)
+  })
+
   // var new_book = {
   //   id: Number(req.body.id),
   //   name: req.body.name,
   //   price: Number(req.body.price)
   // }
   // books.push(new_book)
+}
+
+let addBook = (req, res, next) => {
+  const book = {
+    isbn: Number(req.body.isbn),
+    name: req.body.name,
+    price: Number(req.body.price)
+  }
+
+  Book.create(book, (err, new_book) => {
+    res.json(new_book)
+  })
 }
 
 let ping = (req, res, next) => {
@@ -88,6 +110,7 @@ let deleteBookById = (req, res, next) => {
 module.exports = {
   getBooks: getBooks,
   ping: ping,
+  addBook: addBook,
   getBookById: getBookById,
   updateBookById: updateBookById,
   deleteBookById: deleteBookById

@@ -17,6 +17,8 @@ router.get('/ping', controller.ping)
 
 router.get('/', controller.getBooks)
 
+router.post('/', controller.addBook)
+
 router.get('/:id', controller.getBookById)
 
 router.put('/:id', controller.updateBookById)
