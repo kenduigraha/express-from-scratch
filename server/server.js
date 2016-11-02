@@ -12,6 +12,7 @@ const cors = require('cors')
 // Initiate Express
 const app = express()
 // const router = express.Router()
+
 const router = require('./routes/index')
 
 // ---------------------------------------------------------------------
