@@ -1,0 +1,17 @@
+{
+  "name": "client",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Ken Duigraha utra <kenduigraha@yahoo.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/kenduigraha/express-from-scratch",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
