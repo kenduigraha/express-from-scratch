@@ -19,7 +19,7 @@ const app = express()
 // ---------------------------------------------------------------------
 // APP MODULES
 // ---------------------------------------------------------------------
-const routesBooks = require('./routes/books')
+const routesBooks = require('./routes/routes.api.books')
 
 // ---------------------------------------------------------------------
 // MONGOOSE CONFIGURATION
