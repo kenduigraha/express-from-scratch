@@ -6,7 +6,7 @@ const express = require('express')
 // ---------------------------------------------------------------------
 //controller books
 // ---------------------------------------------------------------------
-const controller = require('../controllers/controller.books')
+const controller = require('../controllers/controller.api.books')
 
 // Initiate Express
 const app = express()
