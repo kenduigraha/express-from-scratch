@@ -3,6 +3,10 @@
 // ROUTING
 // ---------------------------------------------------------------------
 const express = require('express')
+// ---------------------------------------------------------------------
+//controller books
+// ---------------------------------------------------------------------
+const controller = require('../controllers/controller.books')
 
 // Initiate Express
 const app = express()
@@ -13,18 +17,7 @@ router.get('/ping', (req, res, next) => {
   res.send('PONG!')
 })
 
-router.get('/books', (req, res, next) => {
-  //req.body.body = /
-  //req.params = /params
-  //req.query = ?query={value}
-  res.json(books)
-  // var new_book = {
-  //   id: Number(req.body.id),
-  //   name: req.body.name,
-  //   price: Number(req.body.price)
-  // }
-  // books.push(new_book)
-})
+router.get('/books', controller.viewBooks)
 
 router.get('/books/:id', (req, res, next) => {
   let book = books.filter( (book) => {
