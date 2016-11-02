@@ -13,7 +13,10 @@ const cors = require('cors')
 const app = express()
 // const router = express.Router()
 
-const router = require('./routes/index')
+// ---------------------------------------------------------------------
+// APP MODULES
+// ---------------------------------------------------------------------
+const routesBooks = require('./routes/books')
 
 // ---------------------------------------------------------------------
 // APP CONFIGURATION
@@ -28,7 +31,7 @@ app.use(cors())
 // REGISTER ROUTES
 // ---------------------------------------------------------------------
 
-app.use('/', router)
+app.use('/', routesBooks)
 
 
 // ---------------------------------------------------------------------
