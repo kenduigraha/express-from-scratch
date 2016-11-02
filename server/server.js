@@ -1,5 +1,8 @@
 'use strict'
 
+// CONFIG
+require('dotenv').config()
+
 // ---------------------------------------------------------------------
 // NODE Modules
 // ---------------------------------------------------------------------
@@ -17,6 +20,13 @@ const app = express()
 // APP MODULES
 // ---------------------------------------------------------------------
 const routesBooks = require('./routes/books')
+
+// ---------------------------------------------------------------------
+// MONGOOSE CONFIGURATION
+// ---------------------------------------------------------------------
+const mongoose = require('mongoose')
+mongoose.Promise = global.Promise
+mongoose.connect(process.env.MONGODB_URI)
 
 // ---------------------------------------------------------------------
 // APP CONFIGURATION
