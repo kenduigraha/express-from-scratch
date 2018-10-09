@@ -13,9 +13,6 @@ const Book = require('../models/books')
   /api/books
 */
 let getBooks = (req, res, next) => {
-  //req.body.body = /
-  //req.params = /params
-  //req.query = ?query={value}
   Book.find({}, (err, all_books) => {
     res.json(all_books)
   })
